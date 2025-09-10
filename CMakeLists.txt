@@ -20,7 +20,9 @@ endif()
 
 # 测试 & 打包
 enable_testing()
-add_test(NAME SmokeTest COMMAND main)
+add_test(NAME SmokeTest
+         COMMAND main
+         WORKING_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 set_tests_properties(SmokeTest PROPERTIES
   TIMEOUT 15
 )
